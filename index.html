@@ -3,95 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zelo – The Smart, Trusted Cyprus Marketplace</title>
+    <title>Zelo – Early Access</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-        header { background: #2b2bff; color: white; padding: 60px 20px; text-align: center; }
-        h1 { margin: 0; font-size: 48px; }
-        h2 { color: #222; }
+        header { background: #2B2BFF; padding: 80px 20px; color: white; text-align: center; }
+        h1 { font-size: 48px; margin-bottom: 10px; }
+        p { font-size: 18px; }
+
         .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        .section { margin-bottom: 50px; }
-        .card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .card { background: white; padding: 30px; margin-bottom: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h2 { margin-top: 0; }
+
         input, textarea, button {
             width: 100%; padding: 12px; margin-top: 10px;
-            border: 1px solid #ccc; border-radius: 6px; font-size: 16px;
+            border-radius: 8px; border: 1px solid #ccc; font-size: 16px;
         }
         button {
-            background: #2b2bff; color: white; border: none; cursor: pointer;
+            background: #2B2BFF; color: white; border: none; cursor: pointer;
         }
         button:hover { opacity: 0.9; }
+
         footer {
-            text-align: center; padding: 20px; background: #eee; margin-top: 40px;
+            padding: 20px; text-align: center; background: #eee; margin-top: 40px;
         }
     </style>
 </head>
+
 <body>
 
 <header>
     <h1>Stop Searching. Ask Zelo.</h1>
-    <p>Zelo is the AI-powered, verified marketplace for Property, Services and Selected Cars in Cyprus.</p>
-    <p>Find what you need instantly, in your language, with total trust.</p>
+    <p>The AI-powered, trusted marketplace for properties, services & curated cars in Cyprus.</p>
 </header>
 
 <div class="container">
 
-    <div class="section card">
-        <h2>What Is Zelo?</h2>
-        <p>Zelo is the next-generation marketplace built for real decisions — not endless scrolling. 
-        Instead of searching through messy classifieds, just tell Zelo what you need. Our AI recommends 
-        verified, trusted results instantly.</p>
-    </div>
+    <div class="card">
+        <h2>Join Early Access</h2>
+        <p>Be the first to try Zelo and help us shape the future of trusted marketplaces in Cyprus.</p>
 
-    <div class="section card">
-        <h2>How Zelo Works</h2>
-        <ul>
-            <li>You ask Zelo what you need — in your own language</li>
-            <li>Zelo understands your budget, location and preferences</li>
-            <li>Searches only **verified, trusted listings**</li>
-            <li>Gives the **best matches instantly**</li>
-            <li>You contact the provider directly with total trust</li>
-        </ul>
-    </div>
+        <form id="zeloForm">
+            <label>Email</label>
+            <input type="email" id="email" required>
 
-    <div class="section card">
-        <h2>Core Categories</h2>
-        <p><strong>PROPERTY:</strong> Apartments, Houses, Villas, Rentals, Land</p>
-        <p><strong>SERVICES:</strong> Cleaning, Plumbing, Electrical, Renovation, Moving, Solar, Legal, Accounting</p>
-        <p><strong>CARS (curated only):</strong> Dealer verified, checked mileage, warranty options</p>
-    </div>
-
-    <div class="section card">
-        <h2>Why Zelo Is Different</h2>
-        <ul>
-            <li>AI-powered smart search</li>
-            <li>Verified businesses only</li>
-            <li>No fake listings</li>
-            <li>Real ratings and reviews</li>
-            <li>Multilingual experience</li>
-            <li>Fast-response providers</li>
-        </ul>
-    </div>
-
-    <div class="section card">
-        <h2>Join Early Access + Help Us Improve Zelo</h2>
-        <p>We're launching soon in Cyprus. Be the first to get access and help shape the platform.</p>
-
-        <form>
-            <label>Email Address</label>
-            <input type="email" placeholder="Enter your email" required>
-
-            <label>Optional: What features should we add?</label>
-            <textarea rows="4" placeholder="Tell us what would make Zelo perfect for you"></textarea>
+            <label>Optional: What features would you like?</label>
+            <textarea id="feedback" rows="4" placeholder="Tell us what would make Zelo better..."></textarea>
 
             <button type="submit">Join the Waitlist</button>
         </form>
     </div>
 
+    <div class="card">
+        <h2>What Is Zelo?</h2>
+        <p>Zelo uses AI to understand your needs, preferences and budget — and instantly recommend verified listings.</p>
+    </div>
+
+    <div class="card">
+        <h2>Core Categories</h2>
+        <p><strong>Property:</strong> Apartments, Houses, Land, Rentals</p>
+        <p><strong>Services:</strong> Plumbers, Electricians, Cleaners, Movers</p>
+        <p><strong>Curated Cars:</strong> Verified dealers, mileage-check, no fake sellers</p>
+    </div>
+
 </div>
 
 <footer>
-    <p>Zelo – The Smart, Trusted Marketplace of Cyprus</p>
+    Zelo – The Smart, Trusted Marketplace of Cyprus
 </footer>
+
+<script>
+    document.getElementById("zeloForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL_HERE";
+
+        const email = document.getElementById("email").value;
+        const feedback = document.getElementById("feedback").value;
+
+        fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, feedback })
+        });
+
+        alert("Thank you! You have been added to the Zelo Early Access list.");
+        document.getElementById("zeloForm").reset();
+    });
+</script>
 
 </body>
 </html>
