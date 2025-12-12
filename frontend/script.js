@@ -4,7 +4,7 @@
 
 // API Configuration
 // Change this URL to point to your deployed backend
-const API_URL = "http://localhost:5000/api/waitlist";
+const API_URL = "https://zelo-backend-wf4d.onrender.com/api/waitlist";
 
 // AI Demo Responses (simulated)
 const aiResponses = {
