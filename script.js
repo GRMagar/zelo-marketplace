@@ -4,7 +4,9 @@
 
 // API Configuration
 // Change this URL to point to your deployed backend
-const API_URL = "https://zelo-backend-wf4d.onrender.com/api/waitlist";
+const SUPABASE_URL = "https://egzqpsviihzszjlvgdem.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVnenFwc3ZpaWh6c3pqbHZnZGVtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU3OTA1NjgsImV4cCI6MjA4MTM2NjU2OH0.Bo9qUustAbV_ByZ-cgEIjFSlVcWTgtpXLJ-SaFbDXfU";
+
 
 // AI Demo Responses (simulated)
 const aiResponses = {
